@@ -32,7 +32,7 @@ class CurrentDateTime extends React.Component {
         <h3 className="panel-title">The current date and time is</h3>
       </div>
       <div className="panel-body text-center">
-        {this.state.date.format()}
+        {this.state.date.format('dddd, MMMM Do YYYY, h:mm:ss a')}
       </div>
     </div>
   }
@@ -47,7 +47,7 @@ class DateTimeCalculator extends React.Component {
   render() {
     let dateTimeElement = <DateTime onChange={((selectedDateTime) => this.setState({dateTime: selectedDateTime}))}/>
     let selectedDateTimeString
-    if (this.state.dateTime != null) {selectedDateTimeString = 'New Date: ' + this.state.dateTime.format()}
+    if (this.state.dateTime != null) {selectedDateTimeString = 'New Date:' + this.state.dateTime.format('llll')}
 
     return (
       <div className="component">
@@ -62,12 +62,12 @@ class DateTimeCalculator extends React.Component {
             Please pick the legacy date and time below.
             </p>
               <div className="input-group">
-                <span className="input-group-addon">Legacy-Date</span>
                 {dateTimeElement}
+                <span className="input-group-addon">Legacy-Date</span>
               </div>
             <h3>{selectedDateTimeString}</h3>
           </div>
-          <div role="tabpanel" className="tab-pane" id="new">...</div>
+          <div role="tabpanel" className="tab-pane" id="new"></div>
         </div>
       </div>
     )
