@@ -1,0 +1,12 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/react-datetime/css/react-datetime.css";
+
+.container {
+	max-width: 800px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
